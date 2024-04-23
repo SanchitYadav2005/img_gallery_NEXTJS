@@ -1,5 +1,6 @@
 import type { ImagesResult } from "@/models/Images";
 import { ImagesSchemaWithPhotos } from "@/models/Images";
+import env from "./env";
 
 export default async function fetchImages(
     // defining the parameter for the function and its type
@@ -9,7 +10,7 @@ export default async function fetchImages(
   try {
     const res = await fetch(url, {
       headers: {
-        Authorization: process.env.PEXELS_API_KEY,
+        Authorization: env.PEXELS_API_KEY,
       },
     });
 
